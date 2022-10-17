@@ -1,0 +1,126 @@
+:root{
+    --colorCrema: #F0F5E4;
+    --colorVerdeOscuro: #154454; 
+    --colorGrisOscuro: #2D2D2D; 
+}
+/* NOTA:
+    - recordar :root es una pseudoclass
+    - se crearon las variables colorCrema, colorVerdeOscuro, etc.
+    - aqui se utlizo para practicar el uso de pseudoclasses 
+*/
+
+body{
+    background-color: #427E80;
+    margin: 0px;
+    /*explicacion de la linea anterior: el body tiene un margen por default*/
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 5%;
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    padding: 0px;
+    /*revisar: si no se pone padding: 0px, hay un espacio en el lado derecho del menu, que aparentemente corresponde al padding (ver consola) */
+
+    /*otra alternativa de .menu
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            width: 300px; revisar: aqui si no se especifica el width, no se ve el space-around
+            padding: 0px;    
+    */
+}
+
+
+.botonMenu{
+    text-decoration: none;
+    background-color: var(--colorCrema);    
+    padding: 10px;
+    border-radius: 10px; /*redondea el borde del boton*/
+}
+/*incluir una transition en .botonMenu*/
+   
+
+header{
+    background: url(./assets/imagenes/codigo.jpeg);
+    background-size: cover;
+    height: 500px;
+    display: flex; 
+    /*por default se comporta como flex-direction row si no se especifica */
+    justify-content: center; 
+    align-items: center;
+    }
+
+h1{
+    font-size: 60px; /*revisar font-size*/
+    color: var(--colorCrema);
+    /*la linea anterior esta utilizando la variable colorCrema 
+      que esta definida en la pseudoclass :root */
+    background-color: var(--colorGrisOscuro);
+    text-shadow: black;
+    /* revisar: no se ve el text shadow*/
+
+    /*text-align: center; 
+    revisar: es esto necesario?*/      
+}
+
+h2{/*cambiar todos las propiedades del h2*/
+    font-size: 60px; 
+    color: var(--colorCrema);
+    text-shadow: black;
+    text-align: center;
+}
+
+#contenedor{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tarjeta{
+    width: 350px;
+    height: 400px;
+    background-color: var(--colorCrema);
+    border-color: var(--colorVerdeOscuro); /*revisar, no sale el color*/
+    border: solid;
+    border-width: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagenTarjeta{
+    width: 100%;
+}
+
+.parrafoTarjeta{
+    text-align: center;
+}
+
+footer{
+    background-color: #1d1d1d;
+    color: var(--colorCrema); 
+    /*la linea anterior indica el color de cualquier texto dentro del footer*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    /*en la linea anterior: padding 0x indica top y bottom, 40px indica left y right*/
+}
+
+#elementoFooter{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+}
+
+h3{
+    font-size: 14px;
+    text-align: center;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./trabajo_final.css">
+    <title>Trabajo Final</title>
+</head>
+
+<body>
+    <nav>
+        <p>logo tentativo</p>
+        <!--NOTA: crear el logo como un svg animado-->
+        <ul class="menu">
+            <li>
+                <a class="botonMenu" href="./pagina_historia.html">HISTORIA</a>
+                <!--NOTA: 
+                    - aqui se utilizo <a> en lugar de <button> porque es mas sintactico, ya que <a> nos linkea a otra pagina
+                    - luego a la <a> se le da una forma de boton en CSS
+                    - si se utiliza <button>, habria que crear un evento "onclick"
+                    - estaria mal sintacticamente: poner un <a> dentro de un <button> o viceversa, ya que seria repetitivo tener dos elementos que permiten hacer acciones juntos
+                    -->
+            </li>
+            <li>
+                <a class="botonMenu" href="./pagina_juego.html">JUGUEMOS</a>
+            </li>
+        </ul>
+    </nav>    
+    
+    <header>
+            <h1>PROGRAMACION E HISTORIA</h1>
+    </header>
+    
+    <main>    
+        <h2>CONTENIDO</h2> 
+        <div id="contenedor">    
+            <div class="tarjeta">
+                <img class="imagenTarjeta"  src="assets/imagenes/img1.jpg" alt="fotografia de la primera computadora">
+                <p class="parrafoTarjeta">Conozcamos un poco sobre la historia de la programacion</p>
+                <a class="botonTarjeta" href="./pagina_historia.html">Ir a historia</a>
+                
+            </div>
+            
+            <div class="tarjeta">
+                <img class="imagenTarjeta" src="assets/imagenes/img2.jpg" alt="imagen de una computadora">
+                <p class="parrafoTarjeta">Juguemos un poco sobre la computacion</p>
+                <a class="botonTarjeta" href="./pagina_juego.html">Ir a juego</a>        
+            </div>
+        
+        </div>
+    </main>
+    
+    <footer>
+        <div id="elementoFooter">
+            <p>logo tentativo</p>
+            <h3>PROGRAMACION<br>E<br>HISTORIA</h3>
+            <!-- <br> es line break -->
+        </div>
+        <p>Sitio con fines educativos - Creado por Belen Toscano</p>
+    </footer>
+    
+    <!--TO DO:
+            - revisar maquetacion
+    -->
+
+    <script src="./trabajo_final.js"></script>    
+</body>
+</html>
