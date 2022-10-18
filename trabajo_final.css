@@ -124,3 +124,43 @@ h3{
     font-size: 14px;
     text-align: center;
 }
+
+/*CSS de la Pagina Historia*/
+
+.videoTarjeta{
+    
+    display: flex;
+    flex-direction: column;
+    
+ 
+}
+
+.barraVideo{
+    background-color: var(--colorGrisOscuro);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; 
+    
+    align-items: center;
+}
+
+.botonesVideo{
+    display: flex;
+    gap: 20px;
+}
+
+button{
+    background-color: var(--colorCrema);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 3px var(--colorVerdeOscuro);
+}
+
+button:active{
+    box-shadow: none;
+    transform: translate(2px, 3px);
+}
+
+#parrafoDuracion{
+    color: var(--colorCrema);
+}

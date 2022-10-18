@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./trabajo_final.css">
+    <title>Pagina Historia</title>
+</head>
+
+<body>
+
+    <main>
+
+        <h2>Un breve video para complementar lo visto</h2>
+        <div class="videoTarjeta">
+            <video poster="./assets/imagenes/img-video.jpg">
+                <source src="./assets/video/historia-Comp.ogv" type="video/ogv">
+                <source src="./assets/video/historia-Comp.mp4" type="video/mp4">
+            </video>
+            <div class="barraVideo">
+                <div class="botonesVideo">
+                    <button onclick="funcionPlay()">PLAY</button>
+                    <button onclick="funcionPausa()">PAUSA</button>
+                </div>
+                <p id="parrafoDuracion">Duracion video: <span id="duracionVideo"></span></p>
+                                    
+            </div>
+        </div>
+        
+
+    
+    </main>
+    <script src="./trabajo_final.js"></script>  
+</body>
+</html>
