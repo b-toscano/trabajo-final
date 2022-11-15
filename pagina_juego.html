@@ -9,7 +9,59 @@
 </head>
 
 <body>
+    <nav>
+        <a href="./index.html">
+            <canvas>
+                Este sitio utiliza Canvas. Le pedimos que utilize un navegador que soporte esta aplicacion.
+            </canvas>
+        </a>
+        <ul class="menu">
+            <li>
+                <a class="botonMenu" href="./pagina_historia.html">HISTORIA</a>
+            </li>
+            <li>
+                <a class="botonMenu" href="./pagina_juego.html">JUGUEMOS</a>
+            </li>
+        </ul>
+    </nav>    
     
+    <header>
+            <h1>JUGUEMOS UN POCO</h1>
+    </header>
+    
+    <main >
+        <h2>Armemos el rompecabezas y veamos que imagen es...</h2>
+        
+        <div id="juegoRompecabeza">
+            <div id="juegoContenedor1" class="contenedorRompecabeza" ondragover="funcionDragover(event)" ondrop="funcionDrop(event)">
+                <p>Arrastre y suelte la imagen aquí</p>
+            </div>
+            <div id="juegoContenedor2" class="contenedorRompecabeza" ondragover="funcionDragover(event)" ondrop="funcionDrop2(event)">
+                <p>Arrastre y suelte la imagen aquí</p>
+            </div>
+            <div id="juegoContenedor3" class="contenedorRompecabeza" ondragover="funcionDragover(event)" ondrop="funcionDrop3(event)">
+                <p>Arrastre y suelte la imagen aquí</p>
+            </div>
+        </div>
+
+        <div id="juegoImagenes">    
+            <img id="rompe2Imagen" class="imagenRompecabeza" ondragstart="funcionDragstart(event)" ondragend="funcionDragend2(event)" src="./assets/imagenes/rompe2.png" alt="una parte del rompecabezas">
+            <img id="rompe1Imagen" class="imagenRompecabeza" ondragstart="funcionDragstart(event)" ondragend="funcionDragend1(event)" src="./assets/imagenes/Rompe1.png" alt="una parte del rompecabezas">
+            <img id="rompe3Imagen" class="imagenRompecabeza" ondragstart="funcionDragstart(event)" ondragend="funcionDragend3(event)" src="./assets/imagenes/Rompe3.png" alt="una parte del rompecabezas">
+            
+            <!-- PREGUNTA: por que tambien funciona si NO se incluye el atributo ondragstart="funcionDragstart(event)" ?
+                es decir <img id="imagenJuego1" src="./assets/imagenes/Rompe1.png" alt="">
+            -->
+        </div>
+        
+        <div id="contenedorExtra">
+            <a id="reiniciarJuego" href="./pagina_juego.html">Reiniciar</a>
+        </div>
+        <!-- REVISAR: el botonJuego no reinicia la pagina, solo reinicia el rompecabezas -->
+    
+    </main>
+
+    <script src="./juego.js"></script>
 </body>
 
 </html>

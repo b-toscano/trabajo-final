@@ -1,6 +1,7 @@
 :root{
     --colorCrema: #F0F5E4;
-    --colorVerdeOscuro: #154454; 
+    --colorVerdeOscuro: #154454;
+    --colorVerdeClaro:#427E80; 
     --colorGrisOscuro: #2D2D2D; 
 }
 /* NOTA:
@@ -10,47 +11,66 @@
 */
 
 body{
-    background-color: #427E80;
+    background-color: var(--colorVerdeClaro);    
     margin: 0px;
     /*explicacion de la linea anterior: el body tiene un margen por default*/
+    font-family: sans-serif;
 }
 
 nav{
     display: flex;
     justify-content: space-between;
-    margin: auto 5%;
+    margin: 0px 40px; 
 }
+/* PREGUNTA: como acortar el espacio entre el nav y el header? */
+
+/*
+#logoNavegador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+/*
+canvas{
+    width: 200px;
+    height: 80px;
+}
+*/
+
+/* TO DO: poner la animacion del logo de canvas */
 
 .menu{
     list-style-type: none;
     display: flex;
     gap: 40px;
-    padding: 0px;
-    /*revisar: si no se pone padding: 0px, hay un espacio en el lado derecho del menu, que aparentemente corresponde al padding (ver consola) */
-
-    /*otra alternativa de .menu
-            list-style-type: none;
-            display: flex;
-            justify-content: space-around;
-            width: 300px; revisar: aqui si no se especifica el width, no se ve el space-around
-            padding: 0px;    
-    */
+    padding-top: 20px;
+    padding-bottom: 0px;
 }
-
 
 .botonMenu{
     text-decoration: none;
+    color: var(--colorVerdeOscuro); /*aqui se aplica al color del texto*/
     background-color: var(--colorCrema);    
     padding: 10px;
     border-radius: 10px; /*redondea el borde del boton*/
+    box-shadow: 2px 3px var(--colorVerdeOscuro);
 }
-/*incluir una transition en .botonMenu*/
-   
+
+.botonMenu:active{
+    box-shadow: none;
+    transform: translate(2px,3px);
+    /*PREGUNTA: por que no se hace el translate?
+    notese que las mismas lineas se utilizaron en el
+    boton de la pagina juego y funciona
+    */
+}
 
 header{
     background: url(./assets/imagenes/codigo.jpeg);
     background-size: cover;
-    height: 500px;
+    height: 500px;    
     display: flex; 
     /*por default se comporta como flex-direction row si no se especifica */
     justify-content: center; 
@@ -58,40 +78,54 @@ header{
     }
 
 h1{
-    font-size: 60px; /*revisar font-size*/
+    font-size: 55px;
     color: var(--colorCrema);
     /*la linea anterior esta utilizando la variable colorCrema 
       que esta definida en la pseudoclass :root */
+    
+    text-shadow: 4px 4px black;
+    /*nota: el text-shadow debe especificar la direccion de la sombra, de otro modo, no aparece*/
+    
     background-color: var(--colorGrisOscuro);
-    text-shadow: black;
-    /* revisar: no se ve el text shadow*/
-
+    
     /*text-align: center; 
     revisar: es esto necesario?*/      
 }
 
-h2{/*cambiar todos las propiedades del h2*/
-    font-size: 60px; 
+main{
+    padding: 100px 20px;
+}
+
+h2{
+    font-size: 40px; 
     color: var(--colorCrema);
-    text-shadow: black;
+    text-shadow: 2px 2px var(--colorVerdeOscuro);
     text-align: center;
 }
 
 #contenedor{
     display: flex;
     justify-content: space-evenly;
+    margin: 100px;
 }
 
 .tarjeta{
     width: 350px;
     height: 400px;
-    background-color: var(--colorCrema);
-    border-color: var(--colorVerdeOscuro); /*revisar, no sale el color*/
-    border: solid;
-    border-width: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    background-color: var(--colorCrema);
+    border: 5px solid var(--colorVerdeOscuro);
+    
+    /*
+    otra opcion:
+    border: solid;
+    border-width: 5px;
+    border-color: var(--colorVerdeOscuro);
+    nota: la linea border-color tiene que estar despues de la linea border:solid, de otro modo no se modifica el color
+    */   
 }
 
 .imagenTarjeta{
@@ -102,6 +136,24 @@ h2{/*cambiar todos las propiedades del h2*/
     text-align: center;
 }
 
+.botonTarjeta{
+    text-decoration: none;
+    text-align: center;
+    color: var(--colorCrema); 
+    background-color: var(--colorVerdeClaro);    
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 3px var(--colorVerdeOscuro);
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.botonTarjeta:active{
+    box-shadow: none;
+    transform: translate(2px,3px);
+}
+
+
 footer{
     background-color: #1d1d1d;
     color: var(--colorCrema); 
@@ -111,6 +163,13 @@ footer{
     align-items: center;
     padding: 0px 40px;
     /*en la linea anterior: padding 0x indica top y bottom, 40px indica left y right*/
+    
+    /* PREGUNTA:
+    el alto de del footer deberia ser 80px,
+    pero el logo de canvas sobresale;
+    como acortar el espacio alrededor del logo?
+    */
+
 }
 
 #elementoFooter{
@@ -125,42 +184,137 @@ h3{
     text-align: center;
 }
 
-/*CSS de la Pagina Historia*/
+/*---------- PAGINA HISTORIA ----------*/
 
-.videoTarjeta{
-    
+#contenedorHistoria{
+    display: grid;
+    grid-template-columns:repeat(2,50%);     
+    grid-template-areas: 
+        'contenedorHistoria1 contenedorHistoria2'
+        'contenedorHistoria3 contenedorHistoria4'
+        'contenedorHistoria5 contenedorHistoria6'
+    ;
+    place-items: center;
+    column-gap: 60px;
+    row-gap: 60px;
+    padding: 80px;
+}
+
+#contenedorHistoria1{
+    grid-area: contenedorHistoria1;
+}
+#contenedorHistoria2{
+    grid-area: contenedorHistoria2;
+}
+#contenedorHistoria3{
+    grid-area: contenedorHistoria3;
+}
+#contenedorHistoria4{
+    grid-area: contenedorHistoria4;
+}
+#contenedorHistoria5{
+    grid-area: contenedorHistoria5;
+}
+#contenedorHistoria6{
+    grid-area: contenedorHistoria6;
+}
+
+#contenedorArticle{
     display: flex;
     flex-direction: column;
-    
- 
+    align-items: center;
+}
+
+.videoTarjeta{ 
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: black;
+    padding: 5px;
+    gap: 5px; /*gap entre el video y la barra de reproduccion*/
 }
 
 .barraVideo{
     background-color: var(--colorGrisOscuro);
-    padding: 20px;
+    padding: 2px 8px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between; 
     
     align-items: center;
 }
 
-.botonesVideo{
+.botonesBarra{
     display: flex;
     gap: 20px;
 }
 
-button{
+.botonVideo{
+    width: 80px;
+    height: 50px;
     background-color: var(--colorCrema);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 3px var(--colorVerdeOscuro);
 }
 
-button:active{
+.botonVideo:active{
     box-shadow: none;
     transform: translate(2px, 3px);
 }
 
 #parrafoDuracion{
     color: var(--colorCrema);
+}
+
+
+/*---------- PAGINA JUEGO ----------*/
+
+#juegoRompecabeza{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenedorRompecabeza{
+    width: 275px;
+    height: 400px;
+    border: 2px solid black; background-color: grey;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#juegoImagenes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px 0px;
+    gap: 10px;
+}
+
+.imagenRompecabeza{
+    width: 275px;
+    height: 400px;
+}
+
+#contenedorExtra{
+    display: flex;
+    justify-content: center;
+}
+/*PREGUNTA: como centrar el botonJuego sin utilizar el div #contenedorExtra ? */
+
+#reiniciarJuego{
+    text-decoration: none;
+    font-size:smaller;
+    color: var(--colorVerdeOscuro);
+    background-color: var(--colorCrema);    
+    padding: 10px 100px;
+    border-radius: 10px;
+    box-shadow: 2px 3px var(--colorVerdeOscuro);
+}
+
+#reiniciarJuego:active{
+    box-shadow: none;
+    transform: translate(2px,3px);
 }

@@ -1,34 +1,65 @@
-// PAGINA HISTORIA
 
+// logo del navegador
+let canvas = document.querySelector("canvas");
+let lienzo = canvas.getContext("2d");
 
-// Botones de reproducccion de video
+lienzo.fillStyle="#3F6797"; 
+lienzo.fillRect(20,10,60,35);
+lienzo.fillStyle="lightblue"; 
+lienzo.fillRect(25,15,50,25);
 
-let video=document.querySelector("video");
+lienzo.strokeStyle="#3F6797";
+lienzo.fillStyle="#3F6797"; 
+lienzo.beginPath();
+lienzo.moveTo(30,55);
+lienzo.lineTo(10,75);
+lienzo.lineTo(90,75);
+lienzo.lineTo(70,55);
+lienzo.closePath();
+lienzo.stroke();
+lienzo.fill();
 
-const funcionPlay=()=>{
-    video.play()
-}
+lienzo.strokeStyle="lightblue";
+lienzo.fillStyle="lightblue"; 
+lienzo.beginPath();
+lienzo.moveTo(70,60);
+lienzo.lineTo(30,60);
+lienzo.lineTo(20,70);
+lienzo.lineTo(80,70);
+lienzo.closePath();
+lienzo.stroke();
+lienzo.fill();
 
-const funcionPausa=()=>{
-    video.pause()
-}
+// logo del footer
+let canvasFooter = document.getElementById("canvasFooter");
+let lienzoFooter = canvasFooter.getContext("2d");
 
-// Duracion de video
-/*
-let duracionVideo=document.getElementById("duracionVideo");
-duracionVideo.textContent=video.duration;
-console.log(video.duration);
+lienzoFooter.fillStyle="#3F6797"; 
+lienzoFooter.fillRect(20,10,60,35);
+lienzoFooter.fillStyle="lightblue"; 
+lienzoFooter.fillRect(25,15,50,25);
 
-aqui el tiempo del video me da un NaN: el video no se ha cargado todavia
-sin embargo, para que esta informacion aparezca cuando se carga el video, hay otras alternativas
-*/
+lienzoFooter.strokeStyle="#3F6797";
+lienzoFooter.fillStyle="#3F6797"; 
+lienzoFooter.beginPath();
+lienzoFooter.moveTo(30,55);
+lienzoFooter.lineTo(10,75);
+lienzoFooter.lineTo(90,75);
+lienzoFooter.lineTo(70,55);
+lienzoFooter.closePath();
+lienzoFooter.stroke();
+lienzoFooter.fill();
 
-const funcionDuracion=()=>{
-    let duracionVideo=document.getElementById("duracionVideo");
-    duracionVideo.textContent=video.duration.toFixed(2);
-    // al agregar .toFixed(2) redondeamos el numero a dos decimales
-}
-setTimeout(funcionDuracion,200);
+lienzoFooter.strokeStyle="lightblue";
+lienzoFooter.fillStyle="lightblue"; 
+lienzoFooter.beginPath();
+lienzoFooter.moveTo(70,60);
+lienzoFooter.lineTo(30,60);
+lienzoFooter.lineTo(20,70);
+lienzoFooter.lineTo(80,70);
+lienzoFooter.closePath();
+lienzoFooter.stroke();
+lienzoFooter.fill();
 
-// Para ver todos los metodos y propiedades de una etiqueta: console.dir
-console.dir(video);
+// REVISAR:
+// rectangulo con los bordes redondeados: roundRect(x, y, width, height, radii)
